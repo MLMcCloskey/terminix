@@ -222,6 +222,8 @@ h2 {
     background-image: url(img/step2-btn.png);
     background-position: center;
     color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 0;
     height: 51px;
     margin: 10px 0;
@@ -392,15 +394,7 @@ padding-left: 25px
 
 /* Ideas for how to solve the responsive problem
 
-add media query to set max width to 1000px if greater than 1000 px, otherwise max size is 95vw
-adding a Max-Width = 95vw to images such as "terminix promise" allows images to shrink to fit
-
 edit class names in the html to enable more columns for smaller views
-changing s-offer columns to small and forcing extra small to be 1 column per row instead of 3 should make images stack vertically
-need to make phone number in header smaller in mobile view
-need to make images in first section after header single-wide as well as No One Knows section
-
-need to add a media query to avoid the hard-coded 1000px width of the html
 
 */
 html {
@@ -418,16 +412,20 @@ html {
 .form-container {
     width: 100%;
     height: 50px;
-    max-width: 350px;
+    /* max-width: 350px; */
     margin: 0 auto;
+}
+
+.zipCode {
+    min-width: 112px;
 }
 
 .bbbImage {
     margin: 10px auto !important;
 }
 
-.next-step {
-    /* font-size: 6px; */
+.form2 {
+    margin: 0 auto;
 }
 
 .s-offer.s-right-section {
@@ -437,7 +435,6 @@ html {
 .s-privacy { 
     max-width: 95vw;
     padding: 10px;
-    /* display: block; */
 }
 
 
@@ -487,5 +484,5 @@ html {
 
 Shrinking the Terminix promise to the smallest size makes it hard to read  ---> would have to replace the image with text so that it can be adjusted
 between 768px and 900px width the images in the offers overlap
-between    and 818px the images in the second section do not align perfectly... could be fixed by adding the background of the right image beneath the div   <--- fix applied... is imperfect as bottom appears darker due to stars being spaced further apart
+between 769 and 818px the images in the second section do not align perfectly... could be fixed by adding the background of the right image beneath the div   <--- fix applied... is imperfect as bottom appears darker due to stars being spaced further apart
 */
