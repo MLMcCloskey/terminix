@@ -147,6 +147,7 @@ h2 {
     background-image: url(img/step1-btn.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     padding: 7px 0;
 }
 .form-control {
@@ -219,6 +220,7 @@ h2 {
 
 .step-2__btn {
     background-image: url(img/step2-btn.png);
+    background-position: center;
     color: transparent;
     border: 0;
     height: 51px;
@@ -409,6 +411,10 @@ html {
     max-width: 100vw
 }
 
+.section1 {
+    background-image: url(img/form-bkgd.jpg);
+}
+
 .form-container {
     width: 100%;
     height: 50px;
@@ -424,8 +430,8 @@ html {
     /* font-size: 6px; */
 }
 
-.space-bkgd {
-    width: 100%
+.s-offer.s-right-section {
+    z-index: 9;
 }
 
 .s-privacy { 
@@ -479,6 +485,7 @@ html {
 
 /* Persistant issues
 
-Shrinking the Terminix promise makes it illegible
-when tiny, would be nice to have header extend across entire page (no white space) but the rest of the body to have 95 vw or so
+Shrinking the Terminix promise to the smallest size makes it hard to read  ---> would have to replace the image with text so that it can be adjusted
+between 768px and 900px width the images in the offers overlap
+between    and 818px the images in the second section do not align perfectly... could be fixed by adding the background of the right image beneath the div   <--- fix applied... is imperfect as bottom appears darker due to stars being spaced further apart
 */
