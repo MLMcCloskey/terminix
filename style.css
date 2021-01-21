@@ -2,6 +2,11 @@ html {
     width: 1000px;
     margin: 0 auto;
     display: block;
+    max-width: 100vw;
+}
+
+body {
+    max-width: 100vw;
 }
 
 sup { font-size: 50%; top: -1em; }
@@ -90,6 +95,7 @@ h1 {
     background-image: url(img/form-bkgd.jpg);
     background-repeat: no-repeat;
     height: 372px;
+    background-size: cover;
 }
 
 .step1 .top {
@@ -190,10 +196,11 @@ h2 {
 }
 
 .cta-offer {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     color: #fff;
     padding: 20px 0;
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    margin: 20 auto 0;
 }
 
 .cta-offer p {
@@ -259,11 +266,12 @@ a.modal_button {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    color: #253f25
+    color: #253f25;
+    max-width: 95vw;
 }
 
 .s-offer__center-section {
-    padding-right: 30px;
+    /* padding-right: 30px; */
     padding-bottom: 25px;
     border-left: 1px solid #4d4d4d;
     border-right: 1px solid #4d4d4d
@@ -299,10 +307,11 @@ a.modal_button {
     -ms-flex-pack: center;
     justify-content: center;
     max-width: 280px;
+    margin: auto;
 }
 
 .s-offer__content.s-center {
-    margin: 15px 0
+    margin: 15px auto
 }
 
 .s-offer__main-text {
@@ -374,3 +383,102 @@ padding-left: 25px
 .s-offer.s-right {
     margin-top: 15px
 }
+
+
+
+
+
+/* Ideas for how to solve the responsive problem
+
+add media query to set max width to 1000px if greater than 1000 px, otherwise max size is 95vw
+adding a Max-Width = 95vw to images such as "terminix promise" allows images to shrink to fit
+
+edit class names in the html to enable more columns for smaller views
+changing s-offer columns to small and forcing extra small to be 1 column per row instead of 3 should make images stack vertically
+need to make phone number in header smaller in mobile view
+need to make images in first section after header single-wide as well as No One Knows section
+
+need to add a media query to avoid the hard-coded 1000px width of the html
+
+*/
+html {
+    max-width: 100vw !important;
+}
+.wrapper {
+    padding: 0;
+    max-width: 100vw
+}
+
+.form-container {
+    width: 100%;
+    height: 50px;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.bbbImage {
+    margin: 10px auto !important;
+}
+
+.next-step {
+    /* font-size: 6px; */
+}
+
+.space-bkgd {
+    width: 100%
+}
+
+.s-privacy { 
+    max-width: 95vw;
+    padding: 10px;
+    /* display: block; */
+}
+
+
+
+
+@media only screen and (max-width: 1080px) {
+    html {
+        max-width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .phoneNumber {
+        font-size: 2em !important;
+        margin-left: 10px;
+        /* vertical-align: bottom; */
+        position: absolute;
+        top: 20px;
+        left: 10px;
+    }
+    .s-offer__center-section {
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .phoneNumber {
+        font-size: 1.5em !important;
+        margin-left: 10px;
+        /* vertical-align: bottom; */
+        position: absolute;
+        top: 20px;
+        left: 10px;
+    }
+
+    .phone2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 678px) {
+
+}
+
+
+/* Persistant issues
+
+Shrinking the Terminix promise makes it illegible
+when tiny, would be nice to have header extend across entire page (no white space) but the rest of the body to have 95 vw or so
+*/
