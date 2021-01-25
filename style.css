@@ -59,10 +59,17 @@ header .right {
     color: #F58020;
 }
 
+.s-hero {
+    background-image: url(img/form-bkgd.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .s-hero .left {
     background-image: url(img/hero.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center top;
 }
 
 h1 {
@@ -92,10 +99,11 @@ h1 {
 }
 
 .form-bkgd {
-    background-image: url(img/form-bkgd.jpg);
+    /* background-image: url(img/form-bkgd.jpg); */
     background-repeat: no-repeat;
-    height: 372px;
+    /* height: 372px; */
     background-size: cover;
+    /* background: inherit; */
 }
 
 .step1 .top {
@@ -147,6 +155,9 @@ h2 {
     background-image: url(img/step1-btn.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+
+/* maybe try contain instead of cover and keep form inside it? */
+
     background-position: center;
     padding: 7px 0;
 }
@@ -269,7 +280,7 @@ a.modal_button {
     -ms-flex-pack: center;
     justify-content: center;
     color: #253f25;
-    max-width: 95vw;
+    /* max-width: 95vw; */
 }
 
 .s-offer__center-section {
@@ -389,7 +400,21 @@ padding-left: 25px
 
 
 /*  ********************************************************************************************************* */
+/* use media queries to hide vertical border when offers go to single column and add horizontal border
 
+•	Change the top header section to a single column with 3 rows instead of 3 columns and 1 row for the vertical views, then back to 3 columns for the horizontal views.
+•	The Hero background image size is currently set to “cover”, which is great for the wider views, but maybe set it to “contain” for the smaller views.
+•	Adjust the font-size especially with the H1 tag.  The font should get larger as the screen gets wider.
+•	We start to lose the second line of text under the H1 tag for the smaller widths.  Changing the font-size of the H1 tag will help, but don’t be afraid to move the text up, so all the text is shown at 320px
+•	All of the offers just above the footer of the page should all be in a single column with some margin separating the offers.  It might not be a bad idea to add an HR tag for clear separation.
+ 
+
+changed hero background to contain, but that has created problems with spacing... would have gaps of white space but i already replaced the white space with the spacey backgrounnd
+
+issues from hero stem from the fixed height of the image... it limits the aspect ratio
+
+can bypass issue of expanding text by cutting the image as it looks best with text over it, and using that to replace the background image and not have text
+*/
 
 html {
     max-width: 100vw !important;
@@ -400,7 +425,13 @@ html {
 }
 
 .section1 {
-    background-image: url(img/form-bkgd.jpg);
+    /* background-image: url(img/form-bkgd.jpg); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+}
+
+h1 {
+    /* font-size: 2vw; */
 }
 
 .form-container {
@@ -422,6 +453,10 @@ html {
     margin: 0 auto;
 }
 
+/* .s-offer-sections {
+    margin-bottom: 25px;
+} */
+
 .s-offer.s-right-section {
     z-index: 9;
 }
@@ -436,41 +471,106 @@ html {
 
 @media only screen and (max-width: 1080px) {
     html {
-        max-width: 100vw;
+        max-width: 100vw !important;
+    }
+
+    body {
+        max-width: 100vw !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .s-offer-sections {
+        padding: 0;
+        width: 100vw;
+    }
+
+    .s-offer__center-section {
+        border: none;
+        border-top: 1px solid #4d4d4d;
+        border-bottom: 1px solid #4d4d4d;
+        margin: 20px 0;
+        padding: 30px 0;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .phoneNumber {
-        font-size: 2em !important;
+        font-size: 2.25em !important;
         margin-left: 10px;
         position: absolute;
         top: 20px;
         left: 10px;
     }
-    .s-offer__center-section {
-        border: none;
+
+    h1 {
+        font-size: 8vw;
+    }
+
+    .headerImage {
+        margin: 0 auto;
+    }
+
+    .offer-section {
+        padding: 0;
+        max-width: 100vw;
+    }
+
+    .s-privacy {
+        margin: 0 !important;
+        padding: 10px;
     }
 }
 
 @media only screen and (max-width: 576px) {
     .phoneNumber {
-        font-size: 1.5em !important;
-        margin-left: 10px;
+        font-size: 1.8em !important;
+        /* margin-left: 10px; */
         position: absolute;
         top: 20px;
-        left: 10px;
+        /* left: 10px; */
     }
 
     .phone2 {
-        display: none;
+        /* display: none; */
+        padding-left: 50px;
+        padding-bottom: 10px;
+    }
+
+    .pn2 {
+        /* padding-bottom: 30px; */
+        /* bottom: 50px; */
+        top: 20px;
+        /* font-size: 1.75em; */
     }
 }
+
+@media only screen and (max-width: 404px) {
+    .pn1 {
+        font-size: 1.4em !important;
+        /* margin-bottom: 10px; */
+    }
+    .pn2 {
+        font-size: 2em;
+    }
+}
+
+/* 
+@media only screen and (max-width: 446px) {
+    .s-hero .left {
+        background-image: url(img/heroWithText.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+} */
+
+/* can set up a query for 447 that changes hero from contain with image text to cover with elements */
+
 
 
 /* Persistant issues
 
 Shrinking the Terminix promise to the smallest size makes it hard to read  ---> would have to replace the image with text so that it can be adjusted
-between 768px and 900px width the images in the offers overlap
 between 769 and 818px the images in the second section do not align perfectly... could be fixed by adding the background of the right image beneath the div   <--- fix applied... is imperfect as bottom appears darker due to stars being spaced further apart
 */
