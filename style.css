@@ -99,9 +99,9 @@ h1 {
 }
 
 .form-bkgd {
-    /* background-image: url(img/form-bkgd.jpg); */
+    background-image: url(img/form-bkgd.jpg);
     background-repeat: no-repeat;
-    /* height: 372px; */
+    height: 372px;
     background-size: cover;
     /* background: inherit; */
 }
@@ -520,6 +520,11 @@ h1 {
         margin: 0 !important;
         padding: 10px;
     }
+
+    .pn2 {
+        font-size: 3em !important;
+        top: 10px
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -541,7 +546,7 @@ h1 {
         /* padding-bottom: 30px; */
         /* bottom: 50px; */
         top: 20px;
-        /* font-size: 1.75em; */
+        font-size: 2em !important;
     }
 }
 
@@ -551,7 +556,7 @@ h1 {
         /* margin-bottom: 10px; */
     }
     .pn2 {
-        font-size: 2em;
+        font-size: 2em !important;
     }
 }
 
