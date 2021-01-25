@@ -62,7 +62,7 @@ header .right {
 .s-hero .left {
     background-image: url(img/hero.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 h1 {
