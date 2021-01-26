@@ -155,12 +155,24 @@ h2 {
     background-image: url(img/step1-btn.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    max-width: 400px;
 
 /* maybe try contain instead of cover and keep form inside it? */
 
     background-position: center;
     padding: 7px 0;
+    margin: 0 auto;
 }
+
+/* .main-form_s-btn {
+    align-content: center;
+} */
+
+.next-step {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 .form-control {
     border-radius: 0;
 }
@@ -236,6 +248,9 @@ h2 {
     border: 0;
     height: 51px;
     margin: 10px 0;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, -50%);
 }
 
 a.modal_button {
